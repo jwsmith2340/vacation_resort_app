@@ -9,4 +9,4 @@ RUN pip install --no-cache-dir --upgrade -r /opt/vacation_resort_app/requirement
 
 COPY ./app /opt/vacation_resort_app
 
-CMD ["fastapi", "run", "app/main.py", "--port", "80"]
+CMD ["fastapi", "run", "main.py", "--port", "80"]
