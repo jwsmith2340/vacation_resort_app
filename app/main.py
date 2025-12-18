@@ -6,15 +6,6 @@ from typing import Union
 
 from fastapi import FastAPI
 
-logging.basicConfig(
-    level=logging.INFO,
-    format="%(asctime)s [%(levelname)s] %(message)s",
-    handlers=[
-        logging.FileHandler("debug.log"),
-        logging.StreamHandler()
-    ]
-)
-
 app = FastAPI()
 
 @app.get("/")
@@ -22,7 +13,7 @@ def read_root():
     with open('data/resort_data.csv', 'r') as read_obj:
         csv_reader = csv.reader(read_obj)
         resort_csv = list(csv_reader) 
-        logging.info(f"resort_csv: {resort_csv}")
+        print(f"resort_csv: {resort_csv}")
 
     return {"Hello": "World"}
 
