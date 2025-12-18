@@ -19,7 +19,7 @@ app = FastAPI()
 
 @app.get("/")
 def read_root():
-    with open('/opt/vacation_resort_app/data/resort_data.csv', 'r') as read_obj:
+    with open('data/resort_data.csv', 'r') as read_obj:
         csv_reader = csv.reader(read_obj)
         resort_csv = list(csv_reader) 
         logging.info(f"resort_csv: {resort_csv}")
